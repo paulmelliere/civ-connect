@@ -1,7 +1,7 @@
 <div class="jumbotron">
-    <h1>Report</h1>
+    <!--<h1>Report</h1>-->
 
-        <select ng-model="report.reportType" ng-options="choice for choice in reportTypes"></select><br>
+        <select ng-model="report.reportType" ng-options="choice for choice in reportTypes" ng-change="updatedReportType()"></select><br>
 
         <!-- Single button -->
 <!--        <div class="btn-group" dropdown is-open="status.isopen">
@@ -17,5 +17,54 @@
 
     <div style="margin-top:10px">
         <a class="btn btn-lg btn-success" href="#" role="button" ng-click="submit(report)">Submit</a></p>
+    </div>
+</div>
+<div>
+    <h2 style="text-align:center">Similar Reports</h2>
+
+</div>
+<div class="jumbotron" style="height:auto">
+    <div>
+        <div>
+            <ul>
+                <ul rn-carousel class="image">
+                    <li ng-repeat="slide in slides" >
+
+
+
+                        <p >    {{slide.votes}} Votes</p>
+
+                        <img ng-src="{{slide.image}}" style="margin:auto">
+                        <div>
+                            <p >{{slide.time}}</p>
+                            <p>{{slide.comment}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </ul>
+           <!-- <carousel interval="myInterval">
+
+           style="background-image:url({{ slide.image }});"
+
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <h5>Votes {{slide.votes}}</h5>
+                        <p>{{slide.comment}}</p>
+                        <p>{{slide.time}}</p>
+                    </div>
+                </slide>
+            </carousel>-->
+        </div>
+       <!-- <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+            </div>
+            <div class="col-md-6">
+                Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+                <br />Enter a negative number to stop the interval.
+            </div>
+        </div>-->
     </div>
 </div>
