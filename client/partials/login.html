@@ -1,16 +1,20 @@
 <div class="jumbotron">
     <h1>Welcome to CivConnect!</h1>
     <!--<p class="lead">Welcom to CivConnect!</p>-->
-    <form ng-submit="security.login(user.username, user.password)">
+    <form>
         <div>
             <label>Username:</label>
+        </div>
+        <div>
             <input type="text" name="username" ng-model="user.user" required/><br/>
         </div>
         <div>
             <label>Password:</label>
-            <input type="password" name="password" ng-model="user.pass" required/>
         </div>
         <div>
+            <input type="password" name="password" ng-model="user.pass" required/>
+        </div>
+        <div style="margin-top:10px">
             <!--<input type="submit" value="Log in"/>-->
             <a class="btn btn-lg btn-success" href="#" role="button" ng-click="login(user.user, user.pass)">Login</a></p>
         </div>
