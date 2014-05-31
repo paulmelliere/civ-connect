@@ -42,11 +42,13 @@ controllersModule.controller('areaController', ['$scope', 'Auth', '$location', '
             console.log("Geolocation is not supported by this browser.");}
 
 
+        $http.get('/reports')
+            .success(function(data) {
+                console.log('found reports:' + JSON.stringify(data)
+                )
+                $scope.reports = data;
+            });
 
         }]
         );
 
-        $http.get('/reports')
-.success(function(data) {
-$scope.reports = data;
-            });
