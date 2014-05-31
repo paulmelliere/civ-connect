@@ -2,41 +2,91 @@
 <html>
 <head>
     <title>Indy Civic Hack</title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
-    <script type="text/javascript" src="scripts/lib/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="scripts/lib/sammy/sammy.js" ></script>
-    <script type="text/javascript" src="scripts/lib/knockout/knockout-3.1.0.min.js"></script>
+    <script type="text/javascript" src="scripts/lib/angular-ui/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            console.log( "ready!" );
-            ko.applyBindings(new MainViewModel());
-        });
-    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="//getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div data-bind="with: username">
-        Logged in as <strong data-bind="text: $data"></strong>
+
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">CivConnect</h3>
     </div>
+
+    <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+
+        <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; Company 2014</p>
+    </div>
+
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <!--<div data-bind="with: username">-->
+        <!--Logged in as <strong data-bind="text: $data"></strong>-->
+    <!--</div>-->
 
     <!-- Home -->
-    <div data-bind="with: chosenHomePage">
-        <div data-bind="visible: $root.isNotLoggedIn">
-            <a href="#login" data-bind="click: $root.goToLogin">Login</a>
-        </div>
-        <div data-bind="visible: $root.isLoggedIn">
-            <a href="#logout" data-bind="click: $root.goToLogout">Logout</a>
-        </div>
-        <br/>
-        Welcome to the home page!<br/>
-        <br/>
+    <!--<div data-bind="with: chosenHomePage">-->
+        <!--<div data-bind="visible: $root.isNotLoggedIn">-->
+            <!--<a href="#login" data-bind="click: $root.goToLogin">Login</a>-->
+        <!--</div>-->
+        <!--<div data-bind="visible: $root.isLoggedIn">-->
+            <!--<a href="#logout" data-bind="click: $root.goToLogout">Logout</a>-->
+        <!--</div>-->
+        <!--<br/>-->
+        <!--Welcome to the home page!<br/>-->
+        <!--<br/>-->
 
-        Users only data:
-        <strong data-bind="text: data"></strong>
-    </div>
+        <!--Users only data:-->
+        <!--<strong data-bind="text: data"></strong>-->
+    <!--</div>-->
 
     <!-- Login -->
-    <div data-bind="with: chosenLogin">
+<!--    <div data-bind="with: chosenLogin">
         <strong data-bind="html:failReason"></strong>
         <form action="#login" method="post">
             <div>
@@ -58,7 +108,7 @@
         <strong data-bind="html:failReason"></strong>
         Logging out...
 
-    </div>
+    </div>-->
 
 
 </body>
