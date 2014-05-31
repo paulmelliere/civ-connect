@@ -106,7 +106,7 @@ Service.prototype.init = function(){
         app.use(passport.session());
 
         var oneDay = 86400000;
-        app.use(express.static(path.join(__dirname,  '../../client/')/*, { maxAge: oneDay }*/));
+        app.use(express.static(path.join(__dirname,  './client/')/*, { maxAge: oneDay }*/));
     });
 
     app.post('/login',

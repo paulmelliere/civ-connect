@@ -1,23 +1,17 @@
 {
-  "name": "civichack",
-  "version": "0.0.1",
-  "description": "App for Indy Civic Hack",
-  "main": "web.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/paulmelliere/civichack.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/paulmelliere/civichack/issues"
-  },
-  "homepage": "https://github.com/paulmelliere/civichack",
-  "dependencies": {
-    "express": "~4.3.2",
-    "logfmt": "~1.1.2"
-  }
+    "name": "civichack-api-service",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "bluebird":"1.1.1",
+        "socket.io":"0.9.16",
+        "socket.io-client":"0.9.16",
+        "express": "3.x",
+        "passport":"0.2.0",
+        "passport-local":"1.0.0",
+        "mocha": "1.18.2",
+        "should": "3.1.4",
+        "supertest":"0.10.0",
+        "xmlhttprequest":"1.6.0"
+    }
 }
