@@ -138,6 +138,16 @@ Service.prototype.init = function(){
         return res.end(JSON.stringify({'exclusive':'user data only!'}));
     });
 
+    app.get('/secured',ensureAuthenticated, function(req, res){
+        res.setHeader('Content-Type', 'application');
+        res.writeHead(200);
+        if((process.env['SESSION_KEY_SECRET'] || 'bad')=='bad'){
+            return res.end(JSON.stringify({'secure':false, 'reason':'env: missing session key'}));
+        }
+
+        return res.end(JSON.stringify({'secure':true}));
+    });
+
     app.get('/user', function(req, res){
         res.setHeader('Content-Type', 'application/json');
         res.writeHead(200);
