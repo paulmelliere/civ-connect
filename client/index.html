@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indy Civic Hack</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="scripts/lib/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="scripts/lib/sammy/sammy.js" ></script>
+    <script type="text/javascript" src="scripts/lib/knockout/knockout-3.1.0.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            console.log( "ready!" );
+            ko.applyBindings(new MainViewModel());
+        });
+    </script>
+</head>
+<body>
+    <div data-bind="with: username">
+        Logged in as <strong data-bind="text: $data"></strong>
+    </div>
+
+    <!-- Home -->
+    <div data-bind="with: chosenHomePage">
+        <div data-bind="visible: $root.isNotLoggedIn">
+            <a href="#login" data-bind="click: $root.goToLogin">Login</a>
+        </div>
+        <div data-bind="visible: $root.isLoggedIn">
+            <a href="#logout" data-bind="click: $root.goToLogout">Logout</a>
+        </div>
+        <br/>
+        Welcome to the home page!<br/>
+        <br/>
+
+        Users only data:
+        <strong data-bind="text: data"></strong>
+    </div>
+
+    <!-- Login -->
+    <div data-bind="with: chosenLogin">
+        <strong data-bind="html:failReason"></strong>
+        <form action="#login" method="post">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password"/>
+            </div>
+            <div>
+                <input type="submit" value="Log In"/>
+            </div>
+        </form>
+
+    </div>
+
+    <div data-bind="with: chosenLogout">
+        <strong data-bind="html:failReason"></strong>
+        Logging out...
+
+    </div>
+
+
+</body>
+</html>
