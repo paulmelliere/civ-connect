@@ -1,5 +1,5 @@
 {
-    "name": "rappt-connection-service",
+    "name": "civichack-api-service",
     "version": "0.0.1",
     "private": true,
     "dependencies": {
