@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var civConnect = angular.module('civConnect', ['controllersModule', 'ngRoute']);
+var civConnect = angular.module('civConnect', ['controllersModule', 'ngRoute', 'ui.bootstrap']);
 
 
 civConnect.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {

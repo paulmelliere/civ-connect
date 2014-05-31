@@ -1,4 +1,21 @@
 <div class="jumbotron">
     <h1>Report</h1>
 
+        <select ng-model="report.reportType" ng-options="choice for choice in reportTypes"></select><br>
+
+        <!-- Single button -->
+<!--        <div class="btn-group" dropdown is-open="status.isopen">
+            <button type="button" class="btn btn-primary dropdown-toggle">
+                Report <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li ng-repeat="choice in reportTypes">
+                    <a ng-click="select(choice)">{{choice}}</a>
+                </li>
+            </ul>
+        </div>-->
+
+    <div style="margin-top:10px">
+        <a class="btn btn-lg btn-success" href="#" role="button" ng-click="submit(report)">Submit</a></p>
+    </div>
 </div>
