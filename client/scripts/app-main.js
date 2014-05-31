@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var civConnect = angular.module('civConnect', ['controllersModule', 'ngRoute']);
+var civConnect = angular.module('civConnect', ['controllersModule', 'ngRoute', 'ui.bootstrap', 'angular-carousel','google-maps']);
 
 
 civConnect.run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
@@ -15,7 +15,6 @@ civConnect.run(['$rootScope', '$location', 'Auth', function ($rootScope, $locati
         }
         else {
             console.log('ALLOW');
-            $location.path('/report');
         }
     });
 }]);
@@ -26,6 +25,18 @@ civConnect.config(['$routeProvider', '$httpProvider',
             when('/report', {
                 templateUrl: 'partials/report.html',
                 controller: 'reportController'
+            }).
+            when('/myreports', {
+                templateUrl: 'partials/myreports.html',
+                controller: 'myReportsController'
+            }).
+            when('/home', {
+                templateUrl: 'partials/home.html',
+                controller: 'homePageCtrl'
+            }).
+            when('/areareports', {
+                templateUrl: 'partials/areareports.html',
+                controller: 'areaController'
             }).
             otherwise({
                 templateUrl: 'partials/login.html',
