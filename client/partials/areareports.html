@@ -2,4 +2,10 @@
     .angular-google-map-container { height: 400px; }
 </style>
 
-<google-map center="map.center" zoom="map.zoom"></google-map>
+<google-map center="map.center" zoom="map.zoom" control="map.control">
+    <marker coords='yourLocation'
+
+           >
+    <marker ng-repeat="report in reports" coords="{{report.location}}"></marker>
+</marker>
+</google-map>
