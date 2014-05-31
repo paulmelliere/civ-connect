@@ -63,11 +63,25 @@ Service.prototype.init = function(){
 
         mongoose.connect(process.env['DB_CONNECT_STRING'] || 'mongodb://localhost/civichack');
 
+        var db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'connection error:'));
+        db.on('open',function(){
+            console.log("connection opened");
+        });
+
+        db.on('disconnected',function(){
+            console.log("connection down");
+        });
+
+        db.on('reconnected',function(){
+            console.log("connection re-opened");
+        });
+
         var oneDay = 86400000;
         app.use(express.static(path.join(__dirname,  './client/')/*, { maxAge: oneDay }*/));
     });
 
-    require('./routes')(app);
+    require('./routes')(app, mongoose);
 
 };
 
