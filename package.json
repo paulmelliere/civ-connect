@@ -1,0 +1,23 @@
+{
+  "name": "civichack",
+  "version": "0.0.1",
+  "description": "App for Indy Civic Hack",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulmelliere/civichack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulmelliere/civichack/issues"
+  },
+  "homepage": "https://github.com/paulmelliere/civichack",
+  "dependencies": {
+    "express": "~4.3.2",
+    "logfmt": "~1.1.2"
+  }
+}
