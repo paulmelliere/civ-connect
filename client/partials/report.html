@@ -3,7 +3,9 @@
 
         <select ng-model="report.reportType" ng-options="choice for choice in reportTypes" ng-change="updatedReportType()"></select><br>
 
-        <!-- Single button -->
+        <textarea style="margin-top:10px" class="form-control" id="reportComment" ng-model="report.comment" placeholder="Comment"></textarea>
+
+    <!-- Single button -->
 <!--        <div class="btn-group" dropdown is-open="status.isopen">
             <button type="button" class="btn btn-primary dropdown-toggle">
                 Report <span class="caret"></span>
@@ -19,11 +21,12 @@
         <a class="btn btn-lg btn-success" href="#" role="button" ng-click="submit(report)">Submit</a></p>
     </div>
 </div>
+<div ng-show="hasSimilarReports()">
 <div>
     <h2 style="text-align:center">Similar Reports</h2>
 
 </div>
-<div class="jumbotron" style="height:auto">
+<div class="jumbotron" style="height:auto" >
     <div>
         <div>
             <ul>
@@ -32,16 +35,20 @@
 
 
 
-                        <p >    {{slide.votes}} Votes</p>
 
-                        <img ng-src="{{slide.image}}" style="margin:auto">
+                        <!--<img ng-src="{{slide.image}}" style="margin:auto">-->
                         <div>
                             <p >{{slide.time}}</p>
                             <p>{{slide.comment}}</p>
+                            <p >    {{slide.votes}} Votes</p>
+
                         </div>
                     </li>
                 </ul>
             </ul>
+            <div style="margin-top:10px">
+                <a class="btn btn-lg btn-success" href="#" role="button" ng-click="vote({{slide}})">Vote!</a></p>
+            </div>
            <!-- <carousel interval="myInterval">
 
            style="background-image:url({{ slide.image }});"
@@ -66,5 +73,6 @@
                 <br />Enter a negative number to stop the interval.
             </div>
         </div>-->
+    </div>
     </div>
 </div>

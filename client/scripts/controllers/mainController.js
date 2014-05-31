@@ -13,7 +13,7 @@ controllersModule.controller('mainController', ['$scope', 'Auth', '$location', '
 
             if (value) {
                 console.log("Connect");
-                $location.path('/report');
+                $location.path('/home');
 
             }
 

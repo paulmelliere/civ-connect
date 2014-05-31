@@ -15,6 +15,7 @@ controllersModule.controller('loginController', ['$scope', 'Auth', '$location', 
                 console.log('logged in!');
 
                 Auth.setUser(params);
+                $location.path('#/home');
                 /*console.log("login done with data: ");
                 self.chosenLogin({'failReason':''});
                 console.log(JSON.stringify(data));

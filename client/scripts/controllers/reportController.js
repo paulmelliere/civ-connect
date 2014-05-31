@@ -6,7 +6,6 @@ controllersModule.controller('reportController', ['$scope', 'Auth', '$location',
 
         $scope.report = { time: new Date()};
 
-
         function storePosition(position) {
             $scope.report.location = position;
         }
@@ -46,10 +45,21 @@ controllersModule.controller('reportController', ['$scope', 'Auth', '$location',
             $http.post('/report', report)
                 .success(function(data) {
 
+                    $location.path('/home');
                 })
                 .error(function(data) {
-
+                    $location.path('/home');
                 });
+        };
+
+        $scope.vote = function(slide) {
+            $http.post('/vote', slide)
+                .success(function(data) {
+                    $location.path('/home');
+                })
+                .error(function(data) {
+                    $location.path('home');
+                })
         };
 
         $scope.getSimilarReports = function(reportType) {
@@ -97,7 +107,9 @@ controllersModule.controller('reportController', ['$scope', 'Auth', '$location',
 
 
 
-
+        $scope.hasSimilarReports = function() {
+            return $scope.slides.length > 0;
+        }
 
 
         $scope.myInterval = -1;

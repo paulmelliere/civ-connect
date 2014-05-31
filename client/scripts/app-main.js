@@ -15,7 +15,6 @@ civConnect.run(['$rootScope', '$location', 'Auth', function ($rootScope, $locati
         }
         else {
             console.log('ALLOW');
-            $location.path('/report');
         }
     });
 }]);
@@ -26,6 +25,14 @@ civConnect.config(['$routeProvider', '$httpProvider',
             when('/report', {
                 templateUrl: 'partials/report.html',
                 controller: 'reportController'
+            }).
+            when('/myreports', {
+                templateUrl: 'partials/myreports.html',
+                controller: 'myReportsController'
+            }).
+            when('/home', {
+                templateUrl: 'partials/home.html',
+                controller: 'homePageCtrl'
             }).
             otherwise({
                 templateUrl: 'partials/login.html',
