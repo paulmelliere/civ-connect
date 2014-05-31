@@ -1,4 +1,4 @@
 var service = new (require('./api-service').Service)();
 
 service.init();
-service.run(10080);
+service.run(process.env.PORT || 5000);
