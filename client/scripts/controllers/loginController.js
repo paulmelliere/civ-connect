@@ -1,8 +1,9 @@
 var controllersModule = angular.module('controllersModule');
 
 // Frame Controller
-controllersModule.controller('loginController', ['$scope', '$location', '$http',
-    function ($scope, $location, $http) {
+controllersModule.controller('loginController', ['$scope', 'Auth', '$location', '$http',
+    function ($scope, Auth, $location, $http) {
+
 
         $scope.user = {};
 
@@ -11,8 +12,9 @@ controllersModule.controller('loginController', ['$scope', '$location', '$http',
 
             $http.post('/login/', params)
             .success(function (data){
-                alert('logged in!');
+                console.log('logged in!');
 
+                Auth.setUser(params);
                 /*console.log("login done with data: ");
                 self.chosenLogin({'failReason':''});
                 console.log(JSON.stringify(data));
@@ -21,7 +23,8 @@ controllersModule.controller('loginController', ['$scope', '$location', '$http',
                 self.gotoHome();*/
             })
             .error(function (data){
-                alert('failed');
+                console.log('failed');
+                Auth.setUser(null);
                     /*
                 console.log("login failed with data: ");
                 console.log(JSON.stringify(data));
